@@ -79,14 +79,12 @@ const MyComponent = () => {
 const App = () => {
   
   const layout = useSelector(state => state.athensWeather.layout);
-  
+  const LayoutWidget = getWidget(layout)
   return (
     <div>
       <ComponentSpaces/>
       <MyComponent/>
-      <>
-        {getWidget(layout)}
-      </>
+      <LayoutWidget/>
     </div>
     
   );

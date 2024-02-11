@@ -588,25 +588,25 @@ module.exports = function (webpackEnv) {
     plugins: [
       new IncrementalChunkFilenamePlugin({ startNumber: 100 }), // Start numbering from 1
 
-      new ReplaceCodePlugin({
-        rules: [
-          {
-            pattern : /"dynamicchunk"\+e/g,
-            replacement : '"dynamicchunk"+window.coreObj.widgetIdToHash[e]'
-          },
-          {
-            pattern : /const\s\w+=\{dynamicchunk\d+:\S\(\).+Loading Scripts.+dynamicchunk\d+.+Loading Scripts\.{3}\"}\)\}\)\}.+\w+\=e=>.+jsx\S+}}}/g,
-            type: 1
-          }
+      // new ReplaceCodePlugin({
+      //   rules: [
+      //     {
+      //       pattern : /"dynamicchunk"\+e/g,
+      //       replacement : '"dynamicchunk"+window.coreObj.widgetIdToHash[e]'
+      //     },
+      //     {
+      //       pattern : /const\s\w+=\{dynamicchunk\d+:\S\(\).+Loading Scripts.+dynamicchunk\d+.+Loading Scripts\.{3}\"}\)\}\)\}.+\w+\=e=>.+jsx\S+}}}/g,
+      //       type: 1
+      //     }
           
-        ],
-        chunkRules : [
-          {
-            pattern : /\(self\["webpackChunkui_designer"\] \= self\["webpackChunkui_designer"\] \|\| \[\]\)\.push\(.+\{\W+\w+":/g,
-            type: 1
-          }
-        ]
-      }),
+      //   ],
+      //   chunkRules : [
+      //     {
+      //       pattern : /\(self\["webpackChunkui_designer"\] \= self\["webpackChunkui_designer"\] \|\| \[\]\)\.push\(.+\{\W+\w+":/g,
+      //       type: 1
+      //     }
+      //   ]
+      // }),
   
       // Generates an `index.html` file with the <script> injected.
       new HtmlWebpackPlugin(

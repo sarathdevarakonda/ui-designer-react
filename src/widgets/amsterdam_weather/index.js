@@ -82,6 +82,14 @@ function* loadWeatherData() {
     yield put(weatherLoaded(json));
 }
 
+const Space = ({spaceObj}) => {
+    if(!spaceObj)
+        return <></>
+    const {id} = spaceObj
+    const WidgetRender = getWidget(id)
+    return <WidgetRender/>
+}
+
 
 const MainLayout = ({space1, space2, space3, space4, spaces}) => {
     return (
@@ -113,24 +121,24 @@ const MainLayout = ({space1, space2, space3, space4, spaces}) => {
             <Row gutter={16}>
                 <Col span={12}>
                 <div className="item">
-                    {spaces[1] && getWidget(spaces[1].id)}
+                    <Space spaceObj={spaces[1]}></Space>
                  </div>
                 </Col>
                 <Col span={12}>
                 <div className="item">
-                    {spaces[2] && getWidget(spaces[2].id)}
+                   <Space spaceObj={spaces[2]}></Space>
                 </div>
                 </Col>
             </Row>
             <Row gutter={16}>
                 <Col span={12}>
                 <div className="item">
-                    {spaces[3] && getWidget(spaces[3].id)}
+                    <Space spaceObj={spaces[3]}></Space>
                 </div>
                 </Col>
                 <Col span={12}>
                 <div className="item">
-                    {spaces[4] && getWidget(spaces[4].id)}
+                    <Space spaceObj={spaces[4]}></Space>
                 </div>
                 </Col>
             </Row>

@@ -1,5 +1,5 @@
 import Loadable from "react-loadable";
-
+const loadedWidgets = {}
 const widgets = {
     dynamicchunk43: Loadable({
       loader: () => import("./widgets/sydney_weather"),
@@ -202,9 +202,12 @@ const widgets = {
 }
 
 const  getWidget = (city) => {
-
+    if(loadedWidgets[city]){
+        return loadedWidgets[city]
+    }
     const LoadableWeather = widgets[city]
-    return <LoadableWeather />;
+    loadedWidgets[city] = LoadableWeather
+    return LoadableWeather
 }
 
 export { getWidget }
