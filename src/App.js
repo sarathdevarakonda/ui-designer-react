@@ -8,9 +8,9 @@ import { useEffect } from "react";
 
 const ComponentSpaces = () => {
   const [widgetValues, setWidgetValues] = useState({
-    sydney: 0,
-    tokyo: 0,
-    doha: 0
+    dynamicchunk43: 0,
+    dynamicchunk543: 0,
+    dynamicchunk150: 0
   });
 
   const dispatch = useDispatch(); // Get the dispatch function
@@ -65,8 +65,6 @@ const MyComponent = () => {
       });
     })
     
-
-
     // Remove the event listener when the component is unmounted
     return () => {
       

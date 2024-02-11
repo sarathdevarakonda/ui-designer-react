@@ -590,17 +590,22 @@ module.exports = function (webpackEnv) {
 
       new ReplaceCodePlugin({
         rules: [
-          // {
-          //   // Define the regular expression pattern to find
-          //   pattern: /=>""\+\{(\d+):"([a-f\d]+)",(\d+):"([a-f\d]+)",(\d+):"([a-f\d]+)",(\d+):"([a-f\d]+)",(\d+):"([a-f\d]+)"\}/g,
-          //   // Define the replacement string or function
-          //   replacement: '=>""+window.coreObj.widgetIdToHash',
-          // },
           {
             pattern : /"dynamicchunk"\+e/g,
             replacement : '"dynamicchunk"+window.coreObj.widgetIdToHash[e]'
+          },
+          {
+            pattern : /const\s\w+=\{dynamicchunk\d+:\S\(\).+Loading Scripts.+dynamicchunk\d+.+Loading Scripts\.{3}\"}\)\}\)\}.+\w+\=e=>.+jsx\S+}}}/g,
+            type: 1
           }
+          
         ],
+        chunkRules : [
+          {
+            pattern : /\(self\["webpackChunkui_designer"\] \= self\["webpackChunkui_designer"\] \|\| \[\]\)\.push\(.+\{\W+\w+":/g,
+            type: 1
+          }
+        ]
       }),
   
       // Generates an `index.html` file with the <script> injected.

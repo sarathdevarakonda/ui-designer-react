@@ -29,7 +29,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
 const coreObj = {
-  _layout: "layout_1", // Internal property to store the layout value
+  _layout: "dynamicchunk31", // Internal property to store the layout value
   _widgetIdToHash: {31:"31",43:"43",150:"150",187:"187",543:"543"},
   // Getter method for layout
   get layout() {

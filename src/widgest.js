@@ -1,19 +1,19 @@
 import Loadable from "react-loadable";
 
 const widgets = {
-    sydney: Loadable({
+    dynamicchunk43: Loadable({
       loader: () => import("./widgets/sydney_weather"),
       loading: () => <div>Loading Scripts...</div>,
     }),
-    tokyo: Loadable({
+    dynamicchunk543: Loadable({
       loader: () => import("./widgets/tokyo_weather"),
       loading: () => <div>Loading Scripts...</div>,
     }),
-    layout_1: Loadable({
+    dynamicchunk31: Loadable({
             loader: () => import("./widgets/amsterdam_weather"),
             loading: () => <div>Loading Scripts...</div>,
         }),
-    layout_2: Loadable({
+    dynamicchunk187: Loadable({
             loader: () => import("./widgets/zurich_weather"),
             loading: () => <div>Loading Scripts...</div>,
         }),
@@ -195,7 +195,7 @@ const widgets = {
     //       loading: () => <div>Loading Scripts...</div>,
     //     }),
         
-        doha: Loadable({
+        dynamicchunk150: Loadable({
           loader: () => import("./widgets/doha_weather"),
           loading: () => <div>Loading Scripts...</div>,
         }),
